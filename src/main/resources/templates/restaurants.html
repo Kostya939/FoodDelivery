@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Restaurants</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+<h1>Restaurants</h1>
+<ul>
+    <th:block th:each="restaurant : ${restaurants}">
+        <li>
+            <a th:href="@{/restaurant/{id}(id=${restaurant.id})}" th:text="${restaurant.name}">Restaurant Name</a>
+        </li>
+    </th:block>
+</ul>
+</body>
+</html>

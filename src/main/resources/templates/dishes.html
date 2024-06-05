@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Dishes</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+<h1>Dishes</h1>
+<form th:action="@{/order}" method="post">
+    <input type="hidden" name="restaurantId" th:value="${restaurantId}" />
+    <div th:each="dish : ${dishes}">
+        <input type="checkbox" th:value="${dish.id}" name="dishIds" th:text="${dish.name} + ' - ' + ${dish.price} + ' $'" /> <br />
+    </div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" /><br />
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" name="phone" /><br />
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address" /><br />
+    <button type="submit">Make an Order</button>
+</form>
+<button onclick="window.location.href='/restaurants'">Back</button>
+</body>
+</html>

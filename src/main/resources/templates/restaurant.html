@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Restaurant</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+<h1 th:text="${restaurant.name}">Restaurant Name</h1>
+<h2>Dishes</h2>
+<ul>
+    <th:block th:each="dish : ${restaurant.dishes}">
+        <li th:text="${dish.name} + ' - ' + ${dish.price} + ' $'">Dish Name - Price</li>
+    </th:block>
+</ul>
+<button th:onclick="'window.location.href=\'/restaurant/' + ${restaurant.id} + '/dishes\''">Make an Order</button>
+<button onclick="window.location.href='/restaurants'">Back</button>
+</body>
+</html>

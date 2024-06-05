@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Order Success</title>
+</head>
+<body>
+<h1>Order Placed Successfully</h1>
+<p>Thank you for your order, <span th:text="${order.name}">Customer</span>!</p>
+<p>We will deliver your food to <span th:text="${order.address}">address</span> as soon as possible.</p>
+<button onclick="window.location.href='/orders'">View All Orders</button>
+<button onclick="window.location.href='/restaurants'">Back to Home</button>
+</body>
+</html>

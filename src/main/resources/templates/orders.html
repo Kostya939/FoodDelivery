@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Orders</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+<h1>Orders</h1>
+<ul>
+    <th:block th:each="order : ${orders}">
+        <li>
+            <a th:href="@{/order/{id}(id=${order.id})}" th:text="${order.name} + ' - ' + ${order.status}">Order Customer - Status</a>
+        </li>
+    </th:block>
+</ul>
+<button onclick="window.location.href='/restaurants'">Back</button>
+</body>
+</html>
